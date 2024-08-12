@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запаренный Дурак</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Запаренный Дурак</h1>
+
+    <nav>
+        <a href="#game" onclick="showTab('game')">Игровой стол</a>
+        <a href="#rules" onclick="showTab('rules')">Правила игры</a>
+        <a href="#nastya" onclick="showTab('nastya')">НАСТЯ</a>
+    </nav>
+
+    <div id="game" class="tab-content active">
+        <div id="game-settings">
+            <h2>Создать игру</h2>
+            <form id="settings-form">
+                <label for="deck-size">Выберите размер колоды:</label>
+                <select id="deck-size">
+                    <option value="36">36 карт (от 6 до туза)</option>
+                    <option value="52">52 карты (от 2 до туза)</option>
+                </select><br><br>
+                
+                <label for="player-count">Количество игроков:</label>
+                <select id="player-count"></select><br><br>
+
+                <button type="button" onclick="createGame()">Создать игру</button>
+            </form>
+
+            <div id="link-container" style="display:none;">
+                <p>Отправьте эту ссылку своим друзьям, чтобы они присоединились к игре:</p>
+                <input type="text" id="game-link" readonly style="width: 100%;">
+            </div>
+        </div>
+
+        <div id="game-board" style="display:none;">
+            <!-- Игровое поле -->
+        </div>
+    </div>
+
+    <div id="rules" class="tab-content">
+        <h2>Правила игры</h2>
+        <p>1. Шестёрки нельзя побить, их можно только перевести...</p>
+        <p>2. Пиковая масть бьётся только пикой...</p>
+    </div>
+
+    <div id="nastya" class="tab-content">
+        <h2>НАСТЯ</h2>
+        <p id="nastya-text"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
